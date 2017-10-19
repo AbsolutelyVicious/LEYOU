@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="LEYOU-cms-service" />
+        <module name="LEYOU-cob-service" />
+        <module name="LEYOU-common" />
+        <module name="LEYOU-console" />
+        <module name="LEYOU-dao" />
+        <module name="LEYOU-interface" />
+        <module name="LEYOU-login" />
+        <module name="LEYOU-pojo" />
+        <module name="LEYOU-portal" />
+        <module name="LEYOU-product-service" />
+        <module name="LEYOU-solr-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="LEYOU" target="1.5" />
+      <module name="LEYOU-cms-service" target="1.5" />
+      <module name="LEYOU-cob-service" target="1.5" />
+      <module name="LEYOU-common" target="1.5" />
+      <module name="LEYOU-console" target="1.5" />
+      <module name="LEYOU-dao" target="1.5" />
+      <module name="LEYOU-interface" target="1.5" />
+      <module name="LEYOU-login" target="1.5" />
+      <module name="LEYOU-pojo" target="1.5" />
+      <module name="LEYOU-portal" target="1.5" />
+      <module name="LEYOU-product-service" target="1.5" />
+      <module name="LEYOU-solr-service" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="LEYOU-console:war">
+    <output-path>$PROJECT_DIR$/LEYOU-console/target</output-path>
+    <root id="archive" name="LEYOU-console.war">
+      <element id="artifact" artifact-name="LEYOU-console:war exploded" />
+    </root>
+  </artifact>
+</component>

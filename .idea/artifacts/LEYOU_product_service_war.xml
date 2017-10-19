@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="LEYOU-product-service:war">
+    <output-path>$PROJECT_DIR$/LEYOU-product-service/target</output-path>
+    <root id="archive" name="LEYOU-product-service.war">
+      <element id="artifact" artifact-name="LEYOU-product-service:war exploded" />
+    </root>
+  </artifact>
+</component>
