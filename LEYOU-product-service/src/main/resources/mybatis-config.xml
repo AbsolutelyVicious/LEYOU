@@ -11,12 +11,12 @@
 
 	<!-- 别名 -->
 	<typeAliases>
-		<package name="cn.itcast.core.pojo" />
+		<package name="cn.com.leyou.core.pojo" />
 	</typeAliases>
 
 	<plugins>
 		<!-- 自定义分页插件 -->
-		<plugin interceptor="cn.itcast.core.tools.PageHelper"></plugin>
+		<!--<plugin interceptor="cn.com.leyou.core.tools.PageHelper"></plugin>-->
 		
 		<!-- 通用Mapper -->
 		<plugin interceptor="com.github.abel533.mapperhelper.MapperInterceptor">

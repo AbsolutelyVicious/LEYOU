@@ -19,5 +19,5 @@
 		http://code.alibabatech.com/schema/dubbo
 		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 <!-- 扫描 -->
-<context:component-scan base-package="cn.com.leyou" xmlns:context="http://www.springframework.org/schema/context"/>
+<context:component-scan base-package="cn.com.leyou"/>
 </beans>
