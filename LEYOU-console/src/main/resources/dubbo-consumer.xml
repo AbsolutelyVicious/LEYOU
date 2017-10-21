@@ -19,14 +19,31 @@
 		http://code.alibabatech.com/schema/dubbo
 		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <!-- 搭建Dubbo的服务消费方 -->
-    <!-- 1、Dubbo消费方名称  -->
+    <!-- dubbo消费方的配置 -->
+    <!-- 1、Dubbo消费方提供方名称 -->
     <dubbo:application name="babasport-console" />
+
     <!-- 2、连接zookeeper注册中心 (如果zookeeper是多台机器用，间隔) -->
-    <dubbo:registry address="192.168.64.130:2181" protocol="zookeeper" />
+    <!-- <dubbo:registry address="192.168.56.101:2181" protocol="zookeeper"
+        /> -->
+
+    <!-- 不使用注册中心 -->
+    <dubbo:registry address="N/A" />
+
     <!-- 3、调用接口 -->
     <dubbo:reference interface="cn.com.leyou.core.service.TestTbService"
-                     id="testTbService" />
+                     id="testTbService" url="dubbo://127.0.0.1:20880?token=123456" />
 
+<!--    <dubbo:reference interface="cn.com.leyou.core.service.TestTbService"
+                     id="brandService" url="dubbo://127.0.0.1:20880" />
+
+    <dubbo:reference interface="cn.com.leyou.core.service.TestTbService"
+                     id="productService" url="dubbo://127.0.0.1:20880" />
+
+    <dubbo:reference interface="cn.com.leyou.core.service.TestTbService"
+                     id="skuService" url="dubbo://127.0.0.1:20880" />-->
+
+    <!-- 全局设置超时时间 -->
+    <dubbo:consumer timeout="60000" check="true" />
 
 </beans>
