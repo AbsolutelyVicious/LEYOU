@@ -19,20 +19,14 @@
 		http://code.alibabatech.com/schema/dubbo
 		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <!-- 扫描包 -->
-    <context:component-scan base-package="cn.com" />
+    <!-- 搭建Dubbo的服务消费方 -->
+    <!-- 1、Dubbo消费方名称  -->
+    <dubbo:application name="babasport-console" />
+    <!-- 2、连接zookeeper注册中心 (如果zookeeper是多台机器用，间隔) -->
+    <dubbo:registry address="192.168.64.130:2181" protocol="zookeeper" />
+    <!-- 3、调用接口 -->
+    <dubbo:reference interface="cn.com.leyou.core.service.TestTbService"
+                     id="testTbService" />
 
-    <!-- 处理器 映射器 适配器 -->
-    <mvc:annotation-driven />
-
-    <!-- 导入dubbo的相关配置 -->
-    <import resource="dubbo-consumer.xml"/>
-
-    <!-- 视图解析器 -->
-    <bean id="jspViewResolver"
-          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/console/"></property>
-        <property name="suffix" value=".jsp"></property>
-    </bean>
 
 </beans>

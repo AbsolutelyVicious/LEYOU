@@ -29,12 +29,10 @@ public class TestTbServiceTest {
 	 */
 	@Test
 	public void testAdd2() {
-		
+
 		TestTb testTb = new TestTb();
 		testTb.setName("范冰冰6");
 		testTb.setBirthday(new Date());
-
-
 		testTbDAO.add(testTb);
 		
 	}

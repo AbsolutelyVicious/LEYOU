@@ -1,5 +1,6 @@
 package cn.com.leyou.core.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
  * @author Administrator
  *
  */
-public class TestTb {
+public class TestTb implements Serializable {
 
 	private Integer id; //id
 	private String name; //名称
