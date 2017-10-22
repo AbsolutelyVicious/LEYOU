@@ -37,9 +37,8 @@
     <dubbo:service token="123456"
                    interface="cn.com.leyou.core.service.TestTbService" ref="testTbService" />
 
-<!--    <dubbo:service interface="cn.itcast.core.service.BrandService"
-                   ref="brandService" />
-
+    <dubbo:service interface="cn.com.leyou.core.service.BrandService" ref="brandService" />
+<!--
     <dubbo:service interface="cn.itcast.core.service.ProductService"
                    ref="productService" />
 

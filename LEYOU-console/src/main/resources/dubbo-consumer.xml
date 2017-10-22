@@ -34,10 +34,10 @@
     <dubbo:reference interface="cn.com.leyou.core.service.TestTbService"
                      id="testTbService" url="dubbo://127.0.0.1:20880?token=123456" />
 
-<!--    <dubbo:reference interface="cn.com.leyou.core.service.TestTbService"
+    <dubbo:reference interface="cn.com.leyou.core.service.BrandService"
                      id="brandService" url="dubbo://127.0.0.1:20880" />
 
-    <dubbo:reference interface="cn.com.leyou.core.service.TestTbService"
+<!--    <dubbo:reference interface="cn.com.leyou.core.service.TestTbService"
                      id="productService" url="dubbo://127.0.0.1:20880" />
 
     <dubbo:reference interface="cn.com.leyou.core.service.TestTbService"

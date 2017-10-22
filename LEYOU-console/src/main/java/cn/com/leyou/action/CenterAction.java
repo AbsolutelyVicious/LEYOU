@@ -16,17 +16,12 @@ public class CenterAction {
     private TestTbService testTbService;
 
     @RequestMapping(value="/test/index.do")
-    public String index(Model model)
-    {
-        /*System.out.println("haha");
-        return "index";*/
-        // Dubbo调用测试
+    public String index(Model model){
         TestTb testTb = new TestTb();
         testTb.setName("范冰冰11");
         testTb.setBirthday(new Date());
         testTbService.add(testTb);
-
         return "index";
-
     }
+
 }
