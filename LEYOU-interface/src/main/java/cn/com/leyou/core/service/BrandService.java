@@ -18,4 +18,10 @@ public interface BrandService {
 
     public PageHelper.Page<Brand> findByExample(Brand brand , Integer pageNum , Integer pageSize);
 
+    public Brand findById(Long id);
+
+    public void update(Brand brand);
+
+    void deleteById(Long id);
+
 }

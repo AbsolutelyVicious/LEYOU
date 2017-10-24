@@ -15,4 +15,10 @@ public interface BrandDAO {
 
     public List<Brand> findByAll(Brand brand);
 
+    public Brand findById(Long id);
+    
+    void update(Brand brand);
+
+    void deleteById(Long id);
+
 }

@@ -27,4 +27,23 @@ public class BrandServiceImpl implements BrandService {
 
         return endPage;
     }
+
+    @Override
+    public Brand findById(Long id) {
+        Brand brand = brandDAO.findById(id);
+        return brand;
+    }
+
+    @Override
+    public void update(Brand brand) {
+        brandDAO.update(brand);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+//        for(Long id : ids){
+            brandDAO.deleteById(id);
+//        }
+    }
+
 }

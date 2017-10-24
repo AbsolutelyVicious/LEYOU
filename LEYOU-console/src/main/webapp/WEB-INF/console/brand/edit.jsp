@@ -5,23 +5,41 @@
 <head>
 <title>babasport-edit</title>
 </head>
+<script>
+	function uploadPic(){
+        var options = {
+            url : "/uploadFile.do",
+            type : "post",
+            dataType : "json",
+            success : function(data) {
+                //设置图片的回显属性，来回显图片
+                $("#allUrl").attr("src", data.path);
+                //设置图片的在表单提交后的值
+                $("#imgUrl").val(data.path);
+
+            }
+        };
+        $("#jvForm").ajaxSubmit(options);
+	}
+</script>
 <body>
 <div class="box-positon">
 	<div class="rpos">当前位置: 品牌管理 - 添加</div>
-	<form class="ropt">
-		<input type="submit" onclick="this.form.action='v_list.shtml';" value="返回列表" class="return-button"/>
+	<form class="ropt" action="/console/brand/list.do" >
+		<input type="submit"  value="返回列表" class="return-button"/>
 	</form>
 	<div class="clear"></div>
 </div>
 <div class="body-box" style="float:right">
-	<form id="jvForm" action="edit.do" method="post">
+	<form id="jvForm" action="doEdit.do" method="post">
+        <input name="id" value="${brand.id}" type="hidden"/>
 		<table cellspacing="1" cellpadding="2" width="100%" border="0" class="pn-ftable">
 			<tbody>
 				<tr>
 					<td width="20%" class="pn-flabel pn-flabel-h">
 						<span class="pn-frequired">*</span>
 						品牌名称:</td><td width="80%" class="pn-fcontent">
-						<input type="text" class="required" name="name" maxlength="100"/>
+						<input type="text" class="required" name="name" maxlength="100" value="${brand.name}"/>
 					</td>
 				</tr>
 				<tr>
@@ -43,20 +61,31 @@
 				<tr>
 					<td width="20%" class="pn-flabel pn-flabel-h">
 						品牌描述:</td><td width="80%" class="pn-fcontent">
-						<input type="text" class="required" name="description" maxlength="80"  size="60"/>
+						<input type="text" class="required" name="description" maxlength="80"  size="60" value="${brand.description}" />
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="pn-flabel pn-flabel-h">
 						排序:</td><td width="80%" class="pn-fcontent">
-						<input type="text" class="required" name="sort" maxlength="80"/>
+						<input type="text" class="required" name="sort" maxlength="80" value="${brand.sort}" />
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="pn-flabel pn-flabel-h">
 						是否可用:</td><td width="80%" class="pn-fcontent">
-						<input type="radio" name="isDisplay" value="1" checked="checked"/>可用
-						<input type="radio" name="isDisplay" value="0"/>不可用
+						<input type="radio" name="isDisplay" value="1" />可用
+						<input type="radio" name="isDisplay" value="0" />不可用
+                    <%--<c:if test="${brand.isDisplay==1}">
+                        <input type="radio" name="isDisplay" value="1" checked="checked"/>可用
+                        <input type="radio" name="isDisplay" value="0" />不可用
+                    </c:if>
+                    <c:if test="${brand.isDisplay==0}">
+                        <input type="radio" name="isDisplay" value="1" />可用
+                        <input type="radio" name="isDisplay" value="0" checked="checked" />不可用
+                    </c:if>--%>
+					<script>
+						$("input[name='isDisplay']").val(['${brand.isDisplay}'])
+					</script>
 					</td>
 				</tr>
 			</tbody>

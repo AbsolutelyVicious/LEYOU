@@ -15,7 +15,7 @@
 	<div class="clear"></div>
 </div>
 <div class="body-box">
-<form action="/console/brand/list.do" method="post" style="padding-top:5px;">
+<form action="/console/brand/list.do" method="get" style="padding-top:5px;">
 品牌名称: <input type="text" name="name" value="${name}"/>
 	<select name="isDisplay">
         <option value="1">是</option>
@@ -55,7 +55,7 @@
 			<td><input type="checkbox" value="8" name="ids"/></td>
 			<td align="center">${brand.id}</td>
 			<td align="center">${brand.name}</td>
-			<td align="center"><%--<img width="40" height="40" src="${brand.imgUrl}"/>--%></td>
+			<td align="center"><img width="40" height="40" src="${brand.imgUrl}"/></td>
 			<td align="center">${brand.description}</td>
 			<td align="center">${brand.sort}</td>
 			<td align="center">
@@ -65,7 +65,7 @@
 
 			</td>
 			<td align="center">
-				<a class="pn-opt" href="#">修改</a> | <a class="pn-opt" onclick="if(!confirm('您确定删除吗？')) {return false;}" href="#">删除</a>
+				<a class="pn-opt" href="/console/brand/edit.do?id=${brand.id}">修改</a> | <a class="pn-opt" onclick="if(!confirm('您确定删除吗？')) {return false;}" href="/deleteById.do?id=${brand.id}">删除</a>
 			</td>
 		</tr>
 	</c:forEach>
