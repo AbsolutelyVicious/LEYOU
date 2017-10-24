@@ -61,4 +61,13 @@ public class BrandAction {
         return "redirect:/console/brand/list.do";
     }
 
+    @RequestMapping("/console/brand/doDelete.do")
+    public String doDelete(long[] ids){
+        for(Long id : ids){
+            System.out.println(id);
+            brandService.deleteById(id);
+        }
+        return "redirect:/console/brand/list.do";
+    }
+
 }
