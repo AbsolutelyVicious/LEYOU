@@ -50,10 +50,18 @@ public class ProductAction {
 
     @RequestMapping("/console/product/doAdd.do")
     public String doAdd(Model model, Product product){
-
         System.out.println("product"+product);
         productService.insertProduct(product);
+        return "redirect:/console/product/list.do";
+    }
 
+    @RequestMapping("/console/product/toDelete.do")
+    public String doDelete(String ids){
+        String[] split = ids.split(",");
+        System.out.println(split);
+        for(String id : split){
+            productService.doDeleteProduct(Integer.valueOf(id));
+        }
         return "redirect:/console/product/list.do";
     }
 

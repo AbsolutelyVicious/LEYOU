@@ -24,4 +24,6 @@ public interface ProductService {
 
     void insertProduct(Product product);
 
+    void doDeleteProduct(Integer id);
+
 }

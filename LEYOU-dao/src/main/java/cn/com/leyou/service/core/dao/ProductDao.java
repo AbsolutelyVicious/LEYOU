@@ -4,4 +4,7 @@ import cn.com.leyou.core.pojo.Product;
 import com.github.abel533.mapper.Mapper;
 
 public interface ProductDao extends Mapper<Product> {
+
+    void toDelete(Integer id);
+
 }

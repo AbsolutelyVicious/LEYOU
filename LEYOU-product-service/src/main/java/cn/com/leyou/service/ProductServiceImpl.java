@@ -98,4 +98,9 @@ public class ProductServiceImpl implements ProductService {
         }
         System.out.println("XXXXXXXXXXXXXXXXXXX"+product);
     }
+
+    @Override
+    public void doDeleteProduct(Integer id) {
+        productDao.toDelete(id);
+    }
 }

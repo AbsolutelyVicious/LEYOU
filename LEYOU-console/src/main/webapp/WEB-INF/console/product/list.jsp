@@ -24,6 +24,24 @@ function isShow(){
 	$("#jvForm").submit();
 	
 }
+function optDelete() {
+
+    //请至少选择一个
+    var size = $("input[name='ids']:checked").size();
+    if(size == 0){
+        alert("请至少选择一个");
+        return;
+    }
+    //你确定删除吗
+    if(!confirm("你确定删除吗")){
+        return;
+    }
+    //提交 Form表单
+    $("#jvForm").attr("action","/console/product/toDelete.do");
+    $("#jvForm").attr("method","post");
+    $("#jvForm").submit();
+	
+}
 </script>
 </head>
 <body>
@@ -78,7 +96,7 @@ function isShow(){
 	<tbody class="pn-ltbody">
 	<c:forEach items="${productsList.result}" var="product">
 		<tr bgcolor="#ffffff" onmouseover="this.bgColor='#eeeeee'" onmouseout="this.bgColor='#ffffff'">
-			<td><input type="checkbox" name="ids" value="73"/></td>
+			<td><input type="checkbox" name="ids" value="${product.id}"/></td>
 			<td>${product.id}</td>
 			<td align="center">${product.name}</td>
             <td align="center">
@@ -152,6 +170,7 @@ function isShow(){
 	
 	</span>
 </div>
+	<%-------------------------------------------------------------------------------------------------------------------------------------------------%>
 <div style="margin-top:15px;"><input class="del-button" type="button" value="删除" onclick="optDelete();"/><input class="add" type="button" value="上架" onclick="isShow();"/><input class="del-button" type="button" value="下架" onclick="isHide();"/></div>
 </form>
 </div>
