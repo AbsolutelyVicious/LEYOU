@@ -1,46 +1,62 @@
-package cn.com.leyou.core.pojo.order;
+package cn.com.leyou.core.pojo;
 
 import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Table(name="bbs_detail")
 public class Detail implements Serializable {
     /**
-     * hahaID
+     * ID
      */
+    @Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
     /**
-     * haha订单ID
+     * 订单ID
      */
+    @Column(name = "order_id")
     private Long orderId;
 
     /**
-     * haha商品编号
+     * 商品编号
      */
+    @Column(name = "product_id")
     private Long productId;
 
     /**
-     * haha商品名称
+     * 商品名称
      */
+    @Column(name = "product_name")
     private String productName;
 
     /**
-     * haha 颜色名称
+     *  颜色名称
      */
+    @Column(name = "color")
     private String color;
 
     /**
-     * haha尺码
+     * 尺码
      */
+    @Column(name = "size")
     private String size;
 
     /**
-     * haha商品销售价
+     * 商品销售价
      */
+    @Column(name = "price")
     private Float price;
 
     /**
-     * haha购买数量
+     * 购买数量
      */
+    @Column(name = "amount")
     private Integer amount;
 
     private static final long serialVersionUID = 1L;

@@ -1,10 +1,7 @@
-package cn.com.leyou.core.service;/**
- * @author XuYuandong
- * @create 2017-10-21 8:14 PM
- * @desc
- **/
+package cn.com.leyou.core.service;
 
 import cn.com.leyou.core.pojo.Brand;
+import cn.com.leyou.core.pojo.Product;
 import cn.com.leyou.core.tools.PageHelper;
 
 import java.util.List;
@@ -16,11 +13,11 @@ import java.util.List;
  **/
 public interface BrandService {
 
-    public PageHelper.Page<Brand> findByExample(Brand brand , Integer pageNum , Integer pageSize);
+    PageHelper.Page<Brand> findByExample(Brand brand , Integer pageNum , Integer pageSize);
 
-    public Brand findById(Long id);
+    Brand findById(Long id);
 
-    public void update(Brand brand);
+    void update(Brand brand);
 
     void deleteById(Long id);
 

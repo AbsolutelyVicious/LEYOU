@@ -38,11 +38,10 @@
                    interface="cn.com.leyou.core.service.TestTbService" ref="testTbService" />
 
     <dubbo:service interface="cn.com.leyou.core.service.BrandService" ref="brandService" />
-<!--
-    <dubbo:service interface="cn.itcast.core.service.ProductService"
-                   ref="productService" />
 
-    <dubbo:service interface="cn.itcast.core.service.SkuService"
+    <dubbo:service interface="cn.com.leyou.core.service.ProductService" ref="productService" />
+
+<!--    <dubbo:service interface="cn.itcast.core.service.SkuService"
                    ref="skuService" />-->
 
 

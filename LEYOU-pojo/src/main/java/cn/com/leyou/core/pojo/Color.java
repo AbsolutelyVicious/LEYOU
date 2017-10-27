@@ -1,26 +1,38 @@
-package cn.com.leyou.core.pojo.product;
+package cn.com.leyou.core.pojo;
 
 import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Table(name="bbs_color")
 public class Color implements Serializable {
     /**
-     * hahaID
+     * ID
      */
+    @Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
     /**
-     * haha名称
+     * 名称
      */
+    @Column(name = "name")
     private String name;
 
     /**
-     * haha父ID为色系
+     * 父ID为色系
      */
+    @Column(name = "parent_id")
     private Long parentId;
 
     /**
-     * haha颜色对应的衣服小图
+     * 颜色对应的衣服小图
      */
+    @Column(name = "img_url")
     private String imgUrl;
 
     private static final long serialVersionUID = 1L;

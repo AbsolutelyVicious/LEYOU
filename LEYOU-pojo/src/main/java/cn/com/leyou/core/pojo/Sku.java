@@ -1,52 +1,69 @@
-package cn.com.leyou.core.pojo.product;
+package cn.com.leyou.core.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Table(name="bbs_sku")
 public class Sku implements Serializable {
     /**
-     * hahaID
+     * ID
      */
+    @Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
     /**
-     * haha商品ID
+     * 商品ID
      */
+    @Column(name = "product_id")
     private Long productId;
 
     /**
-     * haha颜色ID
+     * 颜色ID
      */
+    @Column(name = "color_id")
     private Long colorId;
 
     /**
-     * haha尺码
+     * 尺码
      */
+    @Column(name = "size")
     private String size;
 
     /**
-     * haha市场价
+     * 市场价
      */
+    @Column(name = "market_price")
     private Float marketPrice;
 
     /**
-     * haha售价
+     * 售价
      */
+    @Column(name = "price")
     private Float price;
 
     /**
-     * haha运费 默认10元
+     * 运费 默认10元
      */
+    @Column(name = "delive_fee")
     private Float deliveFee;
 
     /**
-     * haha库存
+     * 库存
      */
+    @Column(name = "stock")
     private Integer stock;
 
     /**
-     * haha购买限制
+     * 购买限制
      */
+    @Column(name = "upper_limit")
     private Integer upperLimit;
 
     private Date createTime;

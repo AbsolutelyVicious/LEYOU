@@ -22,7 +22,7 @@ public class Encoding {
                 return new String(str.getBytes("ISO8859-1"), "UTF-8");
             }
         } catch (UnsupportedEncodingException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
         return str;

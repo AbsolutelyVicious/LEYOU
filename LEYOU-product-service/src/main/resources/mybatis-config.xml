@@ -12,6 +12,9 @@
 	<!-- 别名 -->
 	<typeAliases>
 		<package name="cn.com.leyou.core.pojo" />
+		<!--<package name="cn.com.leyou.core.pojo.order" />
+		<package name="cn.com.leyou.core.pojo.product" />
+		<package name="cn.com.leyou.core.pojo.user" />-->
 	</typeAliases>
 
 	<plugins>
@@ -19,13 +22,13 @@
 		<plugin interceptor="cn.com.leyou.core.tools.PageHelper"></plugin>
 		
 		<!-- 通用Mapper -->
-		<!--<plugin interceptor="com.github.abel533.mapperhelper.MapperInterceptor">
-			&lt;!&ndash;主键自增回写方法,默认值MYSQL,详细说明请看文档 &ndash;&gt;
+		<plugin interceptor="com.github.abel533.mapperhelper.MapperInterceptor">
+			<!--主键自增回写方法,默认值MYSQL,详细说明请看文档 -->
 			<property name="IDENTITY" value="HSQLDB" />
 
-			&lt;!&ndash;通用Mapper接口，多个通用接口用逗号隔开 &ndash;&gt;
+			<!--通用Mapper接口，多个通用接口用逗号隔开 -->
 			<property name="mappers" value="com.github.abel533.mapper.Mapper" />
-		</plugin>-->
+		</plugin>
 		
 	</plugins>
 

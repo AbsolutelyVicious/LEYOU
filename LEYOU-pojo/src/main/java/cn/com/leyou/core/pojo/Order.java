@@ -1,72 +1,93 @@
-package cn.com.leyou.core.pojo.order;
+package cn.com.leyou.core.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Table(name="bbs_order")
 public class Order implements Serializable {
     /**
-     * hahaID或订单号
+     * ID或订单号
      */
+    @Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
     /**
-     * haha运费
+     * 运费
      */
+    @Column(name = "deliver_fee")
     private Float deliverFee;
 
     /**
-     * haha应付金额
+     * 应付金额
      */
+    @Column(name = "total_price")
     private Float totalPrice;
 
     /**
-     * haha订单金额
+     * 订单金额
      */
+    @Column(name = "order_price")
     private Float orderPrice;
 
     /**
-     * haha支付方式 0:到付 1:在线 2:邮局 3:公司转帐
+     * 支付方式 0:到付 1:在线 2:邮局 3:公司转帐
      */
+    @Column(name = "payment_way")
     private Integer paymentWay;
 
     /**
-     * haha货到付款方式.1现金,2POS刷卡
+     * 货到付款方式.1现金,2POS刷卡
      */
+    @Column(name = "payment_cash")
     private Integer paymentCash;
 
     /**
-     * haha送货时间
+     * 送货时间
      */
+    @Column(name = "delivery")
     private Integer delivery;
 
     /**
-     * haha是否电话确认 1:是  0: 否
+     * 是否电话确认 1:是  0: 否
      */
-    private Boolean isConfirm;
+    @Column(name = "is_confirm")
+    private Integer isConfirm;
 
     /**
-     * haha支付状态 :0到付1待付款,2已付款,3待退款,4退款成功,5退款失败
+     * 支付状态 :0到付1待付款,2已付款,3待退款,4退款成功,5退款失败
      */
+    @Column(name = "is_paiy")
     private Integer isPaiy;
 
     /**
-     * haha订单状态 0:提交订单 1:仓库配货 2:商品出库 3:等待收货 4:完成 5待退货 6已退货
+     * 订单状态 0:提交订单 1:仓库配货 2:商品出库 3:等待收货 4:完成 5待退货 6已退货
      */
+    @Column(name = "order_state")
     private Integer orderState;
 
     /**
-     * haha订单生成时间
+     * 订单生成时间
      */
+    @Column(name = "create_date")
     private Date createDate;
 
     /**
-     * haha附言
+     * 附言
      */
+    @Column(name = "note")
     private String note;
 
     /**
-     * haha用户ID
+     * 用户ID
      */
+    @Column(name = "buyer_id")
     private Long buyerId;
 
     private static final long serialVersionUID = 1L;
@@ -127,11 +148,11 @@ public class Order implements Serializable {
         this.delivery = delivery;
     }
 
-    public Boolean getIsConfirm() {
+    public Integer getIsConfirm() {
         return isConfirm;
     }
 
-    public void setIsConfirm(Boolean isConfirm) {
+    public void setIsConfirm(Integer isConfirm) {
         this.isConfirm = isConfirm;
     }
 

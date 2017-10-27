@@ -1,68 +1,88 @@
-package cn.com.leyou.core.pojo.user;
+package cn.com.leyou.core.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Table(name="bbs_buyer")
 public class Buyer implements Serializable {
     /**
-     * haha主键
+     * 主键
      */
+    @Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
     /**
-     * haha用户名
+     * 用户名
      */
+    @Column(name = "username")
     private String username;
 
     /**
-     * haha密码
+     * 密码
      */
+    @Column(name = "password")
     private String password;
 
     /**
-     * haha性别:0:保密,1:男,2:女
+     * 性别:0:保密,1:男,2:女
      */
+    @Column(name = "gender")
     private Integer gender;
 
     /**
-     * haha邮箱
+     * 邮箱
      */
+    @Column(name = "email")
     private String email;
 
     /**
-     * haha真实名字
+     * 真实名字
      */
+    @Column(name = "real_name")
     private String realName;
 
     /**
-     * haha注册时间
+     * 注册时间
      */
+    @Column(name = "register_time")
     private Date registerTime;
 
     /**
-     * haha省ID
+     * 省ID
      */
+    @Column(name = "province")
     private String province;
 
     /**
-     * haha市ID
+     * 市ID
      */
+    @Column(name = "city")
     private String city;
 
     /**
-     * haha县ID
+     * 县ID
      */
+    @Column(name = "town")
     private String town;
 
     /**
-     * haha地址
+     * 地址
      */
+    @Column(name = "addr")
     private String addr;
 
     /**
-     * haha是否已删除:1:未,0:删除了
+     * 是否已删除:1:未,0:删除了
      */
-    private Boolean isDel;
+    @Column(name = "is_del")
+    private Integer isDel;
 
     private static final long serialVersionUID = 1L;
 
@@ -154,11 +174,11 @@ public class Buyer implements Serializable {
         this.addr = addr == null ? null : addr.trim();
     }
 
-    public Boolean getIsDel() {
+    public Integer getIsDel() {
         return isDel;
     }
 
-    public void setIsDel(Boolean isDel) {
+    public void setIsDel(Integer isDel) {
         this.isDel = isDel;
     }
 

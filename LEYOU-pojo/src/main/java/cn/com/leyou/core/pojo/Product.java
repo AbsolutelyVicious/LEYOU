@@ -1,82 +1,105 @@
-package cn.com.leyou.core.pojo.product;
+package cn.com.leyou.core.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Table(name="bbs_product")
 public class Product implements Serializable {
     /**
-     * hahaID或商品编号
+     * ID或商品编号
      */
+    @Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
     /**
-     * haha品牌ID
+     * 品牌ID
      */
+    @Column(name = "brand_id")
     private Long brandId;
 
     /**
-     * haha商品名称
+     * 商品名称
      */
+    @Column(name = "name")
     private String name;
 
     /**
-     * haha重量 单位:克
+     * 重量 单位:克
      */
+    @Column(name = "weight")
     private Float weight;
 
     /**
-     * haha是否新品:0:旧品,1:新品
+     * 是否新品:0:旧品,1:新品
      */
-    private Boolean isNew;
+    @Column(name = "is_new")
+    private Integer isNew;
 
     /**
-     * haha是否热销:0,否 1:是
+     * 是否热销:0,否 1:是
      */
-    private Boolean isHot;
+    @Column(name = "is_hot")
+    private Integer isHot;
 
     /**
-     * haha推荐 1推荐 0 不推荐
+     * 推荐 1推荐 0 不推荐
      */
-    private Boolean isCommend;
+    @Column(name = "is_commend")
+    private Integer isCommend;
 
     /**
-     * haha上下架:0否 1是
+     * 上下架:0否 1是
      */
-    private Boolean isShow;
+    @Column(name = "is_show")
+    private Integer isShow;
 
     /**
-     * haha商品图片集
+     * 商品图片集
      */
+    @Column(name = "img_url")
     private String imgUrl;
 
     /**
-     * haha是否删除:0删除,1,没删除
+     * 是否删除:0删除,1,没删除
      */
-    private Boolean isDel;
+    @Column(name = "is_del")
+    private Integer isDel;
 
     /**
-     * haha商品描述
+     * 商品描述
      */
+    @Column(name = "description")
     private String description;
 
     /**
-     * haha包装清单
+     * 包装清单
      */
+    @Column(name = "package_list")
     private String packageList;
 
     /**
-     * haha颜色集
+     * 颜色集
      */
+    @Column(name = "colors")
     private String colors;
 
     /**
-     * haha尺寸集
+     * 尺寸集
      */
+    @Column(name = "sizes")
     private String sizes;
 
     /**
-     * haha添加时间
+     * 添加时间
      */
+    @Column(name = "create_time")
     private Date createTime;
 
     private static final long serialVersionUID = 1L;
@@ -113,35 +136,35 @@ public class Product implements Serializable {
         this.weight = weight;
     }
 
-    public Boolean getIsNew() {
+    public Integer getIsNew() {
         return isNew;
     }
 
-    public void setIsNew(Boolean isNew) {
+    public void setIsNew(Integer isNew) {
         this.isNew = isNew;
     }
 
-    public Boolean getIsHot() {
+    public Integer getIsHot() {
         return isHot;
     }
 
-    public void setIsHot(Boolean isHot) {
+    public void setIsHot(Integer isHot) {
         this.isHot = isHot;
     }
 
-    public Boolean getIsCommend() {
+    public Integer getIsCommend() {
         return isCommend;
     }
 
-    public void setIsCommend(Boolean isCommend) {
+    public void setIsCommend(Integer isCommend) {
         this.isCommend = isCommend;
     }
 
-    public Boolean getIsShow() {
+    public Integer getIsShow() {
         return isShow;
     }
 
-    public void setIsShow(Boolean isShow) {
+    public void setIsShow(Integer isShow) {
         this.isShow = isShow;
     }
 
@@ -153,11 +176,11 @@ public class Product implements Serializable {
         this.imgUrl = imgUrl;
     }
 
-    public Boolean getIsDel() {
+    public Integer getIsDel() {
         return isDel;
     }
 
-    public void setIsDel(Boolean isDel) {
+    public void setIsDel(Integer isDel) {
         this.isDel = isDel;
     }
 
