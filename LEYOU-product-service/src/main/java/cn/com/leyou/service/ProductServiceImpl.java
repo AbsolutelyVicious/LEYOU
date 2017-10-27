@@ -109,4 +109,6 @@ public class ProductServiceImpl implements ProductService {
     public void doIsShow(Long id,Integer isShow) {
         productDao.updateIsShow(id,isShow);
     }
+
+
 }

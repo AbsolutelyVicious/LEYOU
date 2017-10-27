@@ -119,7 +119,7 @@ function optDelete() {
 				<c:if test="${product.isShow==1}">上架</c:if>
 			</td>
 			<td align="center">
-			<a href="#" class="pn-opt">查看</a> | <a href="#" class="pn-opt">修改</a> | <a href="#" onclick="if(!confirm('您确定删除吗？')) {return false;}" class="pn-opt">删除</a> | <a href="../sku/list.do" class="pn-opt">库存</a>
+			<a href="#" class="pn-opt">查看</a> | <a href="#" class="pn-opt">修改</a> | <a href="#" onclick="if(!confirm('您确定删除吗？')) {return false;}" class="pn-opt">删除</a> | <a href="/console/sku/list.do?productId=${product.brandId}" class="pn-opt">库存</a>
 			</td>
 		</tr>
 	</c:forEach>

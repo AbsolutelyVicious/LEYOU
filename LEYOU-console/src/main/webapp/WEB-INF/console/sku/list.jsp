@@ -5,6 +5,38 @@
 <head>
 <title>babasport-list</title>
 </head>
+<script type="text/javascript">
+    function updateSku(flat) {
+        $("#m"+flat).attr("disabled",false);
+        $("#p"+flat).attr("disabled",false);
+        $("#i"+flat).attr("disabled",false);
+        $("#l"+flat).attr("disabled",false);
+        $("#f"+flat).attr("disabled",false);
+    }
+
+    function addSku(flat) {
+
+        $("#m"+flat).attr("disabled",true);
+        $("#p"+flat).attr("disabled",true);
+        $("#i"+flat).attr("disabled",true);
+        $("#l"+flat).attr("disabled",true);
+        $("#f"+flat).attr("disabled",true);
+
+        var param = {
+            "marketPrice":$("#m"+flat).val(),
+                  "price":$("#p"+flat).val(),
+                  "stock":$("#i"+flat).val(),
+             "upperLimit":$("#l"+flat).val(),
+              "deliveFee":$("#f"+flat).val(),
+                     "id":flat
+        };
+
+        $.post("/console/sku/update.do",param,function (data) {
+            
+        });
+
+    }
+</script>
 <body>
 <div class="box-positon">
 	<div class="rpos">当前位置: 库存管理 - 列表</div>
@@ -29,21 +61,21 @@
 		</tr>
 	</thead>
 	<tbody class="pn-ltbody">
-
+        <c:forEach items="${skuList}" var="sku">
 			<tr bgcolor="#ffffff" onmouseover="this.bgColor='#eeeeee'" onmouseout="this.bgColor='#ffffff'">
-				<td><input type="checkbox" name="ids" value="73"/></td>
-				<td>20141028114308048</td>
-				<td align="center">西瓜红</td>
-				<td align="center">S</td>
-				<td align="center"><input type="text" id="m52" value="0.0" disabled="disabled" size="10"/></td>
-				<td align="center"><input type="text" id="p52" value="0.0" disabled="disabled" size="10"/></td>
-				<td align="center"><input type="text" id="i52" value="0" disabled="disabled" size="10"/></td>
-				<td align="center"><input type="text" id="l52" value="0" disabled="disabled" size="10"/></td>
-				<td align="center"><input type="text" id="f52" value="10.0" disabled="disabled" size="10"/></td>
+				<td align="center"><input type="checkbox" name="ids" value="${sku.id}"/></td>
+				<td>&nbsp;&nbsp;${sku.id}</td>
+				<td align="center">${sku.colorId}</td>
+				<td align="center">${sku.size}</td>
+				<td align="center"><input type="text" id="m${sku.id}" value="${sku.marketPrice}" disabled="disabled" size="10"/></td>
+				<td align="center"><input type="text" id="p${sku.id}" value="${sku.price}" disabled="disabled" size="10"/></td>
+				<td align="center"><input type="text" id="i${sku.id}" value="${sku.stock}" disabled="disabled" size="10"/></td>
+				<td align="center"><input type="text" id="l${sku.id}" value="${sku.upperLimit}" disabled="disabled" size="10"/></td>
+				<td align="center"><input type="text" id="f${sku.id}" value="${sku.deliveFee}" disabled="disabled" size="10"/></td>
 				<td align="center">不是</td>
-				<td align="center"><a href="javascript:updateSku(52)" class="pn-opt">修改</a> | <a href="javascript:addSku(52)" class="pn-opt">保存</a></td>
+				<td align="center"><a href="javascript:updateSku(${sku.id})" class="pn-opt">修改</a> | <a href="javascript:addSku(${sku.id})" class="pn-opt">保存</a></td>
 			</tr>
-
+        </c:forEach>
 	</tbody>
 </table>
 </form>

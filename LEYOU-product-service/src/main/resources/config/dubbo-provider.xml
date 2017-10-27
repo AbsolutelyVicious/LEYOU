@@ -41,8 +41,8 @@
 
     <dubbo:service interface="cn.com.leyou.core.service.ProductService" ref="productService" />
 
-<!--    <dubbo:service interface="cn.itcast.core.service.SkuService"
-                   ref="skuService" />-->
+    <dubbo:service interface="cn.com.leyou.core.service.SkuService"
+                   ref="skuService" />
 
 
 </beans>

@@ -40,8 +40,8 @@
     <dubbo:reference interface="cn.com.leyou.core.service.ProductService"
                      id="productService" url="dubbo://127.0.0.1:20880" />
 
-<!--    <dubbo:reference interface="cn.com.leyou.core.service.TestTbService"
-                     id="skuService" url="dubbo://127.0.0.1:20880" />-->
+    <dubbo:reference interface="cn.com.leyou.core.service.SkuService"
+                     id="skuService" url="dubbo://127.0.0.1:20880" />
 
     <!-- 全局设置超时时间 -->
     <dubbo:consumer timeout="60000" check="true" />
