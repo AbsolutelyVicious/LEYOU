@@ -4,7 +4,6 @@
 
 <mapper namespace="cn.com.leyou.service.core.dao.ProductDao">
 
-    <!-- 添加测试类对象 -->
     <delete id="toDelete">
         DELETE
         FROM
@@ -12,5 +11,14 @@
         WHERE
             id = #{id}
     </delete>
+
+    <update id="updateIsShow" parameterType="Product">
+        UPDATE
+            bbs_product
+        SET
+            is_show = #{isShow}
+        WHERE
+            id = #{id}
+    </update>
 
 </mapper>

@@ -7,7 +7,7 @@
 <title>babasport-list</title>
 <script type="text/javascript">
 //上架
-function isShow(){
+function isShow(flat){
 	//请至少选择一个
 	var size = $("input[name='ids']:checked").size();
 	if(size == 0){
@@ -15,11 +15,11 @@ function isShow(){
 		return;
 	}
 	//你确定删除吗
-	if(!confirm("你确定上架吗")){
+	if(!confirm("你确定操作吗")){
 		return;
 	}
 	//提交 Form表单
-	$("#jvForm").attr("action","/brand/isShow.do");
+	$("#jvForm").attr("action","/console/product/isShow.do?isShow="+flat);
 	$("#jvForm").attr("method","post");
 	$("#jvForm").submit();
 	
@@ -54,7 +54,6 @@ function optDelete() {
 </div>
 <div class="body-box">
 
-
 <form action="/console/product/list.do" method="post" style="padding-top:5px;">
 名称: <input type="text" name="name" value="${product.name}"/>
 	<select name="brandId">
@@ -77,7 +76,6 @@ function optDelete() {
 	<input type="submit" class="query" value="查询"/>
 </form>
 
-
 <form id="jvForm">
 <table cellspacing="1" cellpadding="0" width="100%" border="0" class="pn-ltable">
 	<thead class="pn-lthead">
@@ -96,8 +94,8 @@ function optDelete() {
 	<tbody class="pn-ltbody">
 	<c:forEach items="${productsList.result}" var="product">
 		<tr bgcolor="#ffffff" onmouseover="this.bgColor='#eeeeee'" onmouseout="this.bgColor='#ffffff'">
-			<td><input type="checkbox" name="ids" value="${product.id}"/></td>
-			<td>${product.id}</td>
+			<td align="center"><input type="checkbox" name="ids" value="${product.id}"/></td>
+			<td>&nbsp;&nbsp;${product.id}</td>
 			<td align="center">${product.name}</td>
             <td align="center">
 			<c:forTokens items="${product.imgUrl}" delims="," var="imgUrl">
@@ -171,7 +169,7 @@ function optDelete() {
 	</span>
 </div>
 	<%-------------------------------------------------------------------------------------------------------------------------------------------------%>
-<div style="margin-top:15px;"><input class="del-button" type="button" value="删除" onclick="optDelete();"/><input class="add" type="button" value="上架" onclick="isShow();"/><input class="del-button" type="button" value="下架" onclick="isHide();"/></div>
+<div style="margin-top:15px;"><input class="del-button" type="button" value="删除" onclick="optDelete();"/><input class="add" type="button" value="上架" onclick="isShow(1);"/><input class="del-button" type="button" value="下架" onclick="isShow(0);"/></div>
 </form>
 </div>
 </body>

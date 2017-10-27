@@ -26,4 +26,6 @@ public interface ProductService {
 
     void doDeleteProduct(Integer id);
 
+    void doIsShow(Long id,Integer isShow);
+
 }

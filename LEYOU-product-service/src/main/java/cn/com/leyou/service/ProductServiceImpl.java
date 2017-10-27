@@ -90,6 +90,7 @@ public class ProductServiceImpl implements ProductService {
             for(int j=0 ; j<size.length ; j++){
                 Long pno = jedis.incr("pno");
                 product.setId(pno);
+                product.setIsHot(0);
                 product.setIsShow(0);
                 product.setColors(size[j]);
                 product.setSizes(color[i]);
@@ -102,5 +103,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void doDeleteProduct(Integer id) {
         productDao.toDelete(id);
+    }
+
+    @Override
+    public void doIsShow(Long id,Integer isShow) {
+        productDao.updateIsShow(id,isShow);
     }
 }

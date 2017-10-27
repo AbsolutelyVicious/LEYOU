@@ -5,6 +5,7 @@ import cn.com.leyou.core.pojo.Color;
 import cn.com.leyou.core.pojo.Product;
 import cn.com.leyou.core.service.ProductService;
 import cn.com.leyou.core.tools.PageHelper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -61,6 +62,17 @@ public class ProductAction {
         System.out.println(split);
         for(String id : split){
             productService.doDeleteProduct(Integer.valueOf(id));
+        }
+        return "redirect:/console/product/list.do";
+    }
+
+    @RequestMapping("/console/product/isShow.do")
+    public String isShow(String ids ,String isShow){
+
+        String[] split = ids.split(",");
+        System.out.println(split);
+        for(String id : split){
+            productService.doIsShow(Long.valueOf(id),Integer.valueOf(isShow));
         }
         return "redirect:/console/product/list.do";
     }
