@@ -5,8 +5,11 @@
     <file type="web" url="file://$PROJECT_DIR$/LEYOU-cob-service" />
     <file type="web" url="file://$PROJECT_DIR$/LEYOU-console" />
     <file type="web" url="file://$PROJECT_DIR$/LEYOU-login" />
+    <file type="web" url="file://$PROJECT_DIR$/LEYOU-portalT" />
+    <file type="web" url="file://$PROJECT_DIR$/LEYOU-portalX" />
     <file type="web" url="file://$PROJECT_DIR$/LEYOU-product-service" />
     <file type="web" url="file://$PROJECT_DIR$/LEYOU-solr-service" />
+    <type id="Spring" />
   </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />
@@ -35,6 +38,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/LEYOU-portal/pom.xml" />
+        <option value="$PROJECT_DIR$/LEYOU-portalX/pom.xml" />
       </set>
     </option>
   </component>

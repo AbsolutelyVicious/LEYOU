@@ -14,7 +14,7 @@
         <module name="LEYOU-interface" />
         <module name="LEYOU-login" />
         <module name="LEYOU-pojo" />
-        <module name="LEYOU-portal" />
+        <module name="LEYOU-portalT" />
         <module name="LEYOU-product-service" />
         <module name="LEYOU-solr-service" />
       </profile>
@@ -30,6 +30,8 @@
       <module name="LEYOU-login" target="1.7" />
       <module name="LEYOU-pojo" target="1.7" />
       <module name="LEYOU-portal" target="1.7" />
+      <module name="LEYOU-portalT" target="1.7" />
+      <module name="LEYOU-portalX" target="1.7" />
       <module name="LEYOU-product-service" target="1.7" />
       <module name="LEYOU-solr-service" target="1.7" />
     </bytecodeTargetLevel>

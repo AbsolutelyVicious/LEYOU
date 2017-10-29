@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="LEYOU-portalT:war">
+    <output-path>$PROJECT_DIR$/LEYOU-portalT/target</output-path>
+    <root id="archive" name="LEYOU-portalT.war">
+      <element id="artifact" artifact-name="LEYOU-portalT:war exploded" />
+    </root>
+  </artifact>
+</component>

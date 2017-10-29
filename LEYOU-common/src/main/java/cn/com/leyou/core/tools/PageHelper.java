@@ -197,8 +197,9 @@ public class PageHelper implements Interceptor {
 			logger.error("Ignore this exception", e);
 		} finally {
 			try {
-				if (rs != null)
+				if (rs != null){
 					rs.close();
+				}
 			} catch (SQLException e) {
 				logger.error("Ignore this exception", e);
 			}

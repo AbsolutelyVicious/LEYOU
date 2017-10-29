@@ -107,7 +107,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void doIsShow(Long id,Integer isShow) {
+
+
         productDao.updateIsShow(id,isShow);
+
+
     }
 
 

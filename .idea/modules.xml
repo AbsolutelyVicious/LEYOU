@@ -11,7 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/LEYOU-interface/LEYOU-interface.iml" filepath="$PROJECT_DIR$/LEYOU-interface/LEYOU-interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/LEYOU-login/LEYOU-login.iml" filepath="$PROJECT_DIR$/LEYOU-login/LEYOU-login.iml" />
       <module fileurl="file://$PROJECT_DIR$/LEYOU-pojo/LEYOU-pojo.iml" filepath="$PROJECT_DIR$/LEYOU-pojo/LEYOU-pojo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/LEYOU-portal/LEYOU-portal.iml" filepath="$PROJECT_DIR$/LEYOU-portal/LEYOU-portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LEYOU-portalT/LEYOU-portalT.iml" filepath="$PROJECT_DIR$/LEYOU-portalT/LEYOU-portalT.iml" />
       <module fileurl="file://$PROJECT_DIR$/LEYOU-product-service/LEYOU-product-service.iml" filepath="$PROJECT_DIR$/LEYOU-product-service/LEYOU-product-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/LEYOU-solr-service/LEYOU-solr-service.iml" filepath="$PROJECT_DIR$/LEYOU-solr-service/LEYOU-solr-service.iml" />
     </modules>

@@ -19,7 +19,7 @@
         <module>LEYOU-cob-service</module>
         <module>LEYOU-console</module>
         <module>LEYOU-login</module>
-        <module>LEYOU-portal</module>
+        <module>LEYOU-portalT</module>
     </modules>
 
     <!-- 设置统一控制版本 -->
