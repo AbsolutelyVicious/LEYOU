@@ -19,6 +19,7 @@ public class BrandServiceImpl implements BrandService {
     @Autowired
     private BrandDAO brandDAO;
 
+    @Override
     public PageHelper.Page<Brand> findByExample(Brand brand , Integer pageNum, Integer pageSize) {
 
         PageHelper.startPage(pageNum,pageSize);

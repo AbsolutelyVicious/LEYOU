@@ -4,7 +4,9 @@ import cn.com.leyou.core.pojo.Brand;
 import cn.com.leyou.core.pojo.Color;
 import cn.com.leyou.core.pojo.Product;
 import cn.com.leyou.core.tools.PageHelper;
+import org.apache.solr.client.solrj.SolrServerException;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -26,6 +28,6 @@ public interface ProductService {
 
     void doDeleteProduct(Integer id);
 
-    void doIsShow(Long id,Integer isShow);
+    void doIsShow(Long id,Integer isShow) throws IOException, SolrServerException;
 
 }

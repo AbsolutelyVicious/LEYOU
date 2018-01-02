@@ -24,6 +24,7 @@ public class TestTbServiceImpl implements TestTbService {
 	private TestTbDAO testTbDAO;
 	
 
+	@Override
 	public void add(TestTb testTb) {
 		
 		testTbDAO.add(testTb);

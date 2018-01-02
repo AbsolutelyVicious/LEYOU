@@ -20,7 +20,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="LEYOU" target="1.7" />
       <module name="LEYOU-cms-service" target="1.7" />
       <module name="LEYOU-cob-service" target="1.7" />
       <module name="LEYOU-common" target="1.7" />
@@ -28,10 +27,9 @@
       <module name="LEYOU-dao" target="1.7" />
       <module name="LEYOU-interface" target="1.7" />
       <module name="LEYOU-login" target="1.7" />
+      <module name="LEYOU-parent" target="1.7" />
       <module name="LEYOU-pojo" target="1.7" />
-      <module name="LEYOU-portal" target="1.7" />
       <module name="LEYOU-portalT" target="1.7" />
-      <module name="LEYOU-portalX" target="1.7" />
       <module name="LEYOU-product-service" target="1.7" />
       <module name="LEYOU-solr-service" target="1.7" />
     </bytecodeTargetLevel>

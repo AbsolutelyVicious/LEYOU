@@ -27,8 +27,8 @@ public class TestSolr {
     public void createIndex1() throws IOException, SolrServerException {
         HttpSolrServer solrServer = new HttpSolrServer("http://192.168.192.128:8080/solr/collection1");
         SolrInputDocument document  = new SolrInputDocument();
-        document.addField("id","1");
-        document.addField("name_ik","白富美范冰冰");
+        document.addField("id","12");
+        document.addField("name_ik","白富美范冰冰wwwww");
         solrServer.add(document);
         solrServer.commit();
     }
@@ -37,7 +37,7 @@ public class TestSolr {
     public void createIndex2() throws IOException, SolrServerException {
         SolrInputDocument document  = new SolrInputDocument();
         document.addField("id","2");
-        document.addField("name_ik","厉害了我的哥哥");
+        document.addField("name_ik","哥哥");
         httpSolrServer.add(document);
         httpSolrServer.commit();
     }

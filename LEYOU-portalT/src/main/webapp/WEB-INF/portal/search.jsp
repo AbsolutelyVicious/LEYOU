@@ -200,13 +200,18 @@
 		<div class="ml-wrap">
 			<div id="J_filter" class="filter">
 				<div class="f-line top">
-					<div class="f-sort"><a href="javascript:;" class="curr">综合排序<i></i></a><a href="javascript:;" class="">销量<i></i></a><a href="javascript:;" class="">价格<i></i></a><a href="javascript:;" class="" >评论数<i></i></a><a href="javascript:;" class="">新品<i></i></a></div>
+					<div class="f-sort"><a href="javascript:;" class="curr">综合排序<i></i></a><a href="javascript:;" class="">销量<i></i></a>
+					<a href="javascript:serachKeyword('${sort}',1);" class="">价格
+					<i></i></a><a href="javascript:;" class="" >评论数<i></i></a><a href="javascript:;" class="">新品<i></i></a></div>
 					<div class="f-search">
 						<input type="text" value="在结果中搜索" class="input-txt">
 						<a data-type="all" data-field="exp_key" class="btn btn-default" data-url="search?keyword=%E7%91%9C%E4%BC%BD%E6%9C%8D&amp;enc=utf-8&amp;qrst=1&amp;rt=1&amp;stop=1&amp;vt=2&amp;exp_key=" href="javascript:;">确定</a>
 					</div>
-					<div id="J_topPage" class="f-pager"><span class="fp-text"><b>1</b><em>/</em><i>100</i></span><a class="fp-prev disabled" href="javascript:;">&lt;</a><a class="fp-next" onclick="SEARCH.page(3)" href="javascript:;" title="使用方向键右键也可翻到下一页哦！">&gt;</a></div>
-					<div class="f-result-sum">共<span id="J_resCount" class="num">5.6万</span>件商品</div>
+					<div id="J_topPage" class="f-pager">
+					<span class="fp-text"><b>${pageSuperPojos.pageNum}</b><em>/</em>
+					<i>${pageSuperPojos.pages}</i></span><a class="fp-prev disabled" href="javascript:;">&lt;
+					</a><a class="fp-next" onclick="serachKeyword('${sort2}',${pageSuperPojos.pageNum+1})" href="javascript:;" title="使用方向键右键也可翻到下一页哦！">&gt;</a></div>
+					<div class="f-result-sum">共<span id="J_resCount" class="num">${pageSuperPojos.total}</span>件商品</div>
 					<span class="clr"></span>
 				</div>
 				<div class="f-line">
@@ -235,12 +240,12 @@
 			</div>
 <div id="J_goodsList" class="goods-list-v1 gl-type-1 J-goods-list">
 	<ul class="gl-warp clearfix" data-tpl="1">
-		<c:forEach items="${pagination.list }" var="product">
+		<c:forEach items="${superProducts}" var="product">
 		<li data-sku="1711416562" class="gl-item">
 			<div class="gl-i-wrap">
 				<div class="p-img">
 					<a href="javascript:;" onclick="window.open('/product/detail?id=${product.id}')" style="position: relative;">
-						<img width="220" height="220" class="err-product"  src="${product.images[0]}">
+						<img width="220" height="220" class="err-product"  src="${product.imgUrl}">
 						<div id="gwd_float_curve_trigger" class="gwd_float_curve_trigger gwd_float_curve_up" style="left: 70px; top: 180px;">
 							<div class="gwd_float_curve_wrapper">
 							<span class="gwd_float_curve_trigger_icon" style="background-image:url(chrome-extension://dobbgecnokkloebjbcnjpgcopegjabpa/images/background_new.png)"></span>

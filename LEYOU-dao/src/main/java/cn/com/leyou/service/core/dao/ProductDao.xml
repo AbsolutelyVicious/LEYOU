@@ -21,4 +21,13 @@
             id = #{id}
     </update>
 
+    <select id="selectProductById" parameterType="Product" resultType="Product">
+        SELECT
+            *
+        FROM
+            bbs_product
+        WHERE
+            id = #{id}
+    </select>
+
 </mapper>

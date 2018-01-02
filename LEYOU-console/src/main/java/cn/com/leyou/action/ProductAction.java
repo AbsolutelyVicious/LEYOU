@@ -6,12 +6,14 @@ import cn.com.leyou.core.pojo.Product;
 import cn.com.leyou.core.service.ProductService;
 import cn.com.leyou.core.tools.PageHelper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.solr.client.solrj.SolrServerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -67,7 +69,7 @@ public class ProductAction {
     }
 
     @RequestMapping("/console/product/isShow.do")
-    public String isShow(String ids ,String isShow){
+    public String isShow(String ids ,String isShow) throws IOException, SolrServerException {
 
         String[] split = ids.split(",");
         System.out.println(split);

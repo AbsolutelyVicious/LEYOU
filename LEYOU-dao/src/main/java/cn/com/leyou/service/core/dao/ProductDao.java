@@ -10,4 +10,11 @@ public interface ProductDao extends Mapper<Product> {
 
     void updateIsShow(@Param("id") Long id,@Param("isShow") Integer isShow);
 
+    /**
+     * 根据ID查询商品信息
+     * @param id
+     * @return
+     */
+    Product selectProductById(Long id);
+
 }
