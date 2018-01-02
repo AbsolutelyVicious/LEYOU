@@ -16,18 +16,52 @@ import java.util.List;
  **/
 public interface ProductService {
 
+    /**
+     * findProductsList
+     * @param product
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
     PageHelper.Page<Product> findProductsList(Product product, Integer pageNum, Integer pageSize);
 
+    /**
+     * findProductBrand
+     * @return
+     */
     List<Long> findProductBrand();
 
+    /**
+     *findColor
+     * @return
+     */
     List<Color> findColor();
 
+    /**
+     *findByAllBrands
+     * @return
+     */
     List<Brand> findByAllBrands();
 
+    /**
+     *insertProduct
+     * @param product
+     */
     void insertProduct(Product product);
 
+    /**
+     *doDeleteProduct
+     * @param id
+     */
     void doDeleteProduct(Integer id);
 
+    /**
+     * doIsShow
+     * @param id
+     * @param isShow
+     * @throws IOException
+     * @throws SolrServerException
+     */
     void doIsShow(Long id,Integer isShow) throws IOException, SolrServerException;
 
 }
